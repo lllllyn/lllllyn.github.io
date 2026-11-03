@@ -1,31 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            font-size: 18px;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="记录我最近好奇的事、动手做过的小实验，以及过程中的发现。">
+  <title>最近在试什么</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f8f5ed; color: #222820; font: 1rem/1.8 system-ui, sans-serif; }
+    .wrap { width: min(68rem, calc(100% - 2.5rem)); margin-inline: auto; }
+    header, footer { padding-block: 1.2rem; color: #45554a; }
+    header { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid #b6bfb1; }
+    a { color: #245740; text-underline-offset: .2em; }
+    a:focus-visible { outline: 2px solid #245740; outline-offset: 4px; }
+    .hero { padding-block: clamp(3rem, 9vw, 7rem); }
+    .label { color: #315d47; font-weight: 700; letter-spacing: .12em; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font: 800 clamp(2.5rem, 8vw, 6rem)/1.15 system-ui, sans-serif; margin-block: .4em .3em; }
+    .intro { max-width: 35em; color: #45554a; font-size: 1.12rem; }
+    section { padding-bottom: 3rem; }
+    article { margin-top: 1rem; padding: clamp(1.25rem, 4vw, 2.75rem); border: 1px solid #a6b9aa; border-radius: 1.25rem; background: #eaf0e8; }
+    h3 { font-size: clamp(1.5rem, 3.8vw, 2.4rem); line-height: 1.3; margin-block: .35em .55em; }
+    .notes { display: grid; gap: 1.25rem; margin-top: 1.5rem; }
+    .notes div { border-top: 1px solid #a6b9aa; padding-top: .8rem; }
+    dt { font-weight: 700; }
+    dd { margin: .25rem 0 0; }
+    footer { border-top: 1px solid #b6bfb1; }
+    @media (min-width: 48rem) { .notes { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  </style>
 </head>
 <body>
-    <h1>Welcome to My Simple Website! hahaha ！</h1>
-    <p>This is the most basic website with just a title and some text. hahahaha !</p>
-    <p>Check out <a href="https://www.example.com" target="_blank">this link</a> for more information.</p>
+  <header class="wrap">
+    <span>我的实验手记</span>
+    <nav aria-label="站内导航"><a href="#experiments">实验记录</a></nav>
+  </header>
+  <main class="wrap">
+    <div class="hero">
+      <p class="label">一个慢慢长大的小站</p>
+      <h1>最近在试什么？</h1>
+      <p class="intro">这里收集我最近好奇的事。我会挑一件动手试试，再记下当时怎么想、实际怎么做，以及最后发现了什么。</p>
+    </div>
+    <section id="experiments" aria-labelledby="experiments-title">
+      <h2 id="experiments-title">实验记录</h2>
+      <article>
+        <p class="label">实验 01 · 网页与 AI</p>
+        <h3>用语音让 AI 看看我的第一个网页</h3>
+        <dl class="notes">
+          <div><dt>我好奇什么</dt><dd>只用说话，能让 AI 找到我的 GitHub 仓库，再告诉我这个网页是做什么的吗？</dd></div>
+          <div><dt>我怎么试的</dt><dd>我让 AI 通过 GitHub 连接列出仓库，再读取首页和域名配置。最后，我自己在浏览器里打开了网站。</dd></div>
+          <div><dt>我发现了什么</dt><dd>读到网页源码和打开发布后的网站，是两次不同的检查。这次 AI 读到了文件，而我在自己的浏览器里确认了页面能打开。</dd></div>
+        </dl>
+      </article>
+    </section>
+  </main>
+  <footer class="wrap">有新的发现，就在这里记一笔。</footer>
 </body>
 </html>
